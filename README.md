@@ -110,7 +110,7 @@ p {
 
 ### See project in codepen
 
-| Plugin | README |
+| EX | LIVE |
 | ------ | ------ |
 | Codepen | https://codepen.io/chattingharold/pen/LYNbGzd |
 
