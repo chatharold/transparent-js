@@ -112,7 +112,7 @@ p {
 
 | Plugin | README |
 | ------ | ------ |
-| Codepen | : https://codepen.io/chattingharold/pen/LYNbGzd |
+| Codepen | https://codepen.io/chattingharold/pen/LYNbGzd |
 
 
 
