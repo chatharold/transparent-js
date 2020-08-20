@@ -59,7 +59,7 @@ const app = {
   },
 };
 
-let Layout = `
+const Layout = `
      <div class="container">
         <h1>Add</h1>
         <input type="number" oninput="app.trigger.getValueTop(value)">
