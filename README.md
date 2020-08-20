@@ -4,7 +4,7 @@ Experimentation of building a simple UI with vanilla js.
 
   - App 
   - Layout 
- 
+
 
 ## How does it work
 
@@ -12,6 +12,7 @@ Experimentation of building a simple UI with vanilla js.
   - The save property(OBJECT) stores the data
   - The trigger property(OBJECT) contains the functions
   - The Layout contains you HTML
+  
 
 ## Installation
 
@@ -70,6 +71,7 @@ let Layout = `
 const html = (document.querySelector("#root").innerHTML = Layout);
 ```
 
+
 ### css
 
 ```sh
@@ -104,6 +106,7 @@ p {
   margin-top: 1em;
 }
 ```
+
 
 ### See project in codepen
 
