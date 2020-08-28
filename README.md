@@ -7,10 +7,10 @@ Experimentation of building a simple UI with vanilla js.
 
 
 ## How does it work
-
-  - You have an App ( OBJECT )
-  - The save property(OBJECT) stores the data
-  - The trigger property(OBJECT) contains the functions
+  - global variables: get passed inside the html 
+  - save: stores the data
+  - triggerEvent: contains all the events
+  - The triggerMethod: contains all the methods
   - The Layout contains you HTML
   
 
@@ -39,36 +39,79 @@ Experimentation of building a simple UI with vanilla js.
 ### main.js
 
 ```sh
+// ***************************
+//  HEADER
+// ***************************
+const headerTitle = `
+  My page
+`;
+
+const headerUl = `
+  <ul>
+    <li>Home</li>
+    <li>About</li>
+    <li>Contact</li>
+  </ul>
+`;
+
+
+// ***************************
+//  BANNER
+// ***************************
+const bannerTitle = `
+    My app
+`;
+
+const bannerResult = `
+    Result:
+`;
+
+// ***************************
+//  HTML
+// ***************************
+const Layout = `
+     <div class="container">
+        <header>
+           <h1>${headerTitle}</h1> 
+           <nav>${headerUl}</nav>
+        </header>
+        <section id="banner">
+            <h2>${bannerTitle}</h2>
+            <input type="number" placeholder="Enter first:" oninput="app.triggerEvent.getTopValue(value)">   
+            <input type="number" placeholder="Enter first:" oninput="app.triggerEvent.getBottomValue(value)">   
+            <p>${bannerResult} <span class="result"></span></p>
+        </section>        
+     </div>
+`;
+// ***************************
+//  LOGIC
+// ***************************
 const app = {
   save: {
-    top: "",
-    down: "",
+    topValue: "",
+    bottomValue: "",
   },
-  trigger: {
+  triggerMethod: {
     addBoth() {
-      return app.save.top + app.save.down;
+      return app.save.topValue + app.save.bottomValue;
     },
-    getValueTop(value) {
-      app.save.top = parseInt(value);
-      document.querySelector(".result").innerHTML = app.trigger.addBoth();
+  },
+  triggerEvent: {
+    getTopValue(value) {
+      app.save.topValue = parseFloat(value) || 0;
+      document.querySelector(".result").innerHTML = app.triggerMethod.addBoth();
     },
-    getValueBottom(value) {
-      app.save.down = parseInt(value);
-      document.querySelector(".result").innerHTML = app.trigger.addBoth();
+    getBottomValue(value) {
+      app.save.bottomValue = parseFloat(value) || 0;
+      document.querySelector(".result").innerHTML = app.triggerMethod.addBoth();
     },
   },
 };
-
-const Layout = `
-     <div class="container">
-        <h1>Add</h1>
-        <input type="number" oninput="app.trigger.getValueTop(value)">
-        <input type="number" oninput="app.trigger.getValueBottom(value)">
-        <p>Result: <span class="result"></span></p>
-     </div>
-`;
-
+// ***************************
+//  RENDERING
+// ***************************
 const html = (document.querySelector("#root").innerHTML = Layout);
+
 ```
 
 
@@ -85,26 +128,59 @@ const html = (document.querySelector("#root").innerHTML = Layout);
   font-family: sans-serif;
 }
 
+html {
+    font-size: calc(15px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+
 .container {
   color: white;
   background-color: #424242;
   height: 100vh;
+  text-align: center;
+}
+
+/* { HEADER } */
+header {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: stretch;
-  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  background-color: #494949;
 }
 
-input {
-  padding: 10px;
-  margin: 1em 35vw;
+header h1 {
+  padding-left: 1em;
 }
 
-p {
-  text-align: center;
-  margin-top: 1em;
+nav {
+  display: flex;
 }
+
+nav ul {
+  display: inherit;  
+}
+
+nav li {
+  list-style-type: none;  
+  padding: 0 1em;
+  margin-right: 1em;
+}
+
+/* { BANNER } */
+#banner {
+    padding: 2em 0;
+    font-size: x-large;
+}
+
+#banner input {
+    padding: 8px 13px;
+    margin-top: 2em;
+}
+
+#banner p {
+    margin-top: 1em;
+}
+
 ```
 
 
