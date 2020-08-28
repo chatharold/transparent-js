@@ -77,8 +77,8 @@ const Layout = `
         </header>
         <section id="banner">
             <h2>${bannerTitle}</h2>
-            <input type="number" placeholder="Enter first:" oninput="app.triggerEvent.getTopValue(value)">   
-            <input type="number" placeholder="Enter first:" oninput="app.triggerEvent.getBottomValue(value)">   
+            <input type="number" placeholder="Enter first value:" oninput="app.triggerEvent.getTopValue(value)">   
+            <input type="number" placeholder="Enter second value:" oninput="app.triggerEvent.getBottomValue(value)">   
             <p>${bannerResult} <span class="result"></span></p>
         </section>        
      </div>
