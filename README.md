@@ -7,10 +7,10 @@ Experimentation of building a simple UI with vanilla js.
 
 
 ## How does it work
-  - global variables: get passed inside the html 
-  - save: stores the data
-  - triggerEvent: contains all the events
-  - The triggerMethod: contains all the methods
+  - The variables: get injected inside your html
+  - The save { object }: stores the data
+  - The triggerEvent { object }: contains all the events
+  - The triggerMethod { object }: contains all the methods
   - The Layout contains you HTML
   
 
