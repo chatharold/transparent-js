@@ -170,16 +170,20 @@ nav li {
 #banner {
     padding: 2em 0;
     font-size: x-large;
+    display: grid;
+    justify-items: center;
 }
 
 #banner input {
     padding: 8px 13px;
     margin-top: 2em;
+    display: block;
 }
 
 #banner p {
     margin-top: 1em;
 }
+
 
 ```
 
