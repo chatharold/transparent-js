@@ -1,30 +1,72 @@
+// ***************************
+//  HEADER
+// ***************************
+const headerTitle = `
+  My page
+`;
+
+const headerUl = `
+  <ul>
+    <li>Home</li>
+    <li>About</li>
+    <li>Contact</li>
+  </ul>
+`;
+
+
+// ***************************
+//  BANNER
+// ***************************
+const bannerTitle = `
+    Add values
+`;
+
+const bannerResult = `
+    Result:
+`;
+
+// ***************************
+//  HTML
+// ***************************
+const Layout = `
+     <div class="container">
+        <header>
+           <h1>${headerTitle}</h1> 
+           <nav>${headerUl}</nav>
+        </header>
+        <section id="banner">
+            <h2>${bannerTitle}</h2>
+            <input type="number" placeholder="Enter first value:" oninput="app.triggerEvent.getTopValue(value)">   
+            <input type="number" placeholder="Enter second value:" oninput="app.triggerEvent.getBottomValue(value)">   
+            <p>${bannerResult} <span class="result"></span></p>
+        </section>        
+     </div>
+`;
+// ***************************
+//  LOGIC
+// ***************************
 const app = {
   save: {
-    top: "",
-    down: "",
+    topValue: "",
+    bottomValue: "",
   },
-  trigger: {
+  triggerMethod: {
     addBoth() {
-      return app.save.top + app.save.down;
+      return app.save.topValue + app.save.bottomValue;
     },
-    getValueTop(value) {
-      app.save.top = parseInt(value);
-      document.querySelector(".result").innerHTML = app.trigger.addBoth();
+  },
+  triggerEvent: {
+    getTopValue(value) {
+      app.save.topValue = parseFloat(value) || 0;
+      document.querySelector(".result").innerHTML = app.triggerMethod.addBoth();
     },
-    getValueBottom(value) {
-      app.save.down = parseInt(value);
-      document.querySelector(".result").innerHTML = app.trigger.addBoth();
+    getBottomValue(value) {
+      app.save.bottomValue = parseFloat(value) || 0;
+      document.querySelector(".result").innerHTML = app.triggerMethod.addBoth();
     },
   },
 };
-
-let Layout = `
-     <div class="container">
-        <h1>Add</h1>
-        <input type="number" oninput="app.trigger.getValueTop(value)">
-        <input type="number" oninput="app.trigger.getValueBottom(value)">
-        <p>Result: <span class="result"></span></p>
-     </div>
-`;
-
+// ***************************
+//  RENDERING
+// ***************************
 const html = (document.querySelector("#root").innerHTML = Layout);
