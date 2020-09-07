@@ -130,6 +130,7 @@ const app = {
 // ***************************
 
 const html = (document.querySelector("#root").innerHTML = Layout);
+```
 
 
 ### css
@@ -200,8 +201,6 @@ nav li {
 #banner p {
     margin-top: 1em;
 }
-
-
 ```
 
 
