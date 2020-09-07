@@ -69,6 +69,48 @@ const bannerResult = `
 // ***************************
 //  HTML
 // ***************************
+// ***************************
+//  HEADER
+// ***************************
+const headerTitle = `
+  My page
+`;
+
+const headerUl = `
+  <ul>
+    <li>Home</li>
+    <li>About</li>
+    <li>Contact</li>
+  </ul>
+`;
+
+
+// ***************************
+//  BANNER
+// ***************************
+const bannerTitle = `
+    My app
+`;
+
+const bannerResult = `
+    Result:
+`;
+
+// ***************************
+//  INPUTS
+// ***************************
+const firstInput = `
+<input type="number" placeholder="Enter first value:" oninput="app.triggerEvent.getTopValue(value)">   
+`;
+
+const secondInput = `
+<input type="number" placeholder="Enter second value:" oninput="app.triggerEvent.getBottomValue(value)"> 
+`;
+      
+
+// ***************************
+//  HTML
+// ***************************
 const Layout = `
      <div class="container">
         <header>
@@ -77,8 +119,8 @@ const Layout = `
         </header>
         <section id="banner">
             <h2>${bannerTitle}</h2>
-            <input type="number" placeholder="Enter first value:" oninput="app.triggerEvent.getTopValue(value)">   
-            <input type="number" placeholder="Enter second value:" oninput="app.triggerEvent.getBottomValue(value)">   
+             ${firstInput}
+             ${secondInput}
             <p>${bannerResult} <span class="result"></span></p>
         </section>        
      </div>
@@ -111,8 +153,6 @@ const app = {
 //  RENDERING
 // ***************************
 const html = (document.querySelector("#root").innerHTML = Layout);
-
-```
 
 
 ### css
