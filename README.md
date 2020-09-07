@@ -42,6 +42,7 @@ Experimentation of building a simple UI with vanilla js.
 // ***************************
 //  HEADER
 // ***************************
+
 const headerTitle = `
   My page
 `;
@@ -58,6 +59,7 @@ const headerUl = `
 // ***************************
 //  BANNER
 // ***************************
+
 const bannerTitle = `
     My app
 `;
@@ -66,39 +68,11 @@ const bannerResult = `
     Result:
 `;
 
-// ***************************
-//  HTML
-// ***************************
-// ***************************
-//  HEADER
-// ***************************
-const headerTitle = `
-  My page
-`;
-
-const headerUl = `
-  <ul>
-    <li>Home</li>
-    <li>About</li>
-    <li>Contact</li>
-  </ul>
-`;
-
-
-// ***************************
-//  BANNER
-// ***************************
-const bannerTitle = `
-    My app
-`;
-
-const bannerResult = `
-    Result:
-`;
 
 // ***************************
 //  INPUTS
 // ***************************
+
 const firstInput = `
 <input type="number" placeholder="Enter first value:" oninput="app.triggerEvent.getTopValue(value)">   
 `;
