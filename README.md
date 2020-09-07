@@ -55,7 +55,6 @@ const headerUl = `
   </ul>
 `;
 
-
 // ***************************
 //  BANNER
 // ***************************
@@ -67,7 +66,6 @@ const bannerTitle = `
 const bannerResult = `
     Result:
 `;
-
 
 // ***************************
 //  INPUTS
@@ -85,6 +83,7 @@ const secondInput = `
 // ***************************
 //  HTML
 // ***************************
+
 const Layout = `
      <div class="container">
         <header>
@@ -99,9 +98,11 @@ const Layout = `
         </section>        
      </div>
 `;
+
 // ***************************
 //  LOGIC
 // ***************************
+
 const app = {
   save: {
     topValue: "",
@@ -123,9 +124,11 @@ const app = {
     },
   },
 };
+
 // ***************************
 //  RENDERING
 // ***************************
+
 const html = (document.querySelector("#root").innerHTML = Layout);
 
 
